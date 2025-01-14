@@ -58,12 +58,12 @@ def compute_metrics(eval_preds, label_names, metric):
         for prediction, label in zip(predictions, labels)
     ]
     all_metrics = metric.compute(predictions=true_predictions, references=true_labels)
-    return {
-        "precision": all_metrics["overall_precision"],
-        "recall": all_metrics["overall_recall"],
-        "f1": all_metrics["overall_f1"],
-        "accuracy": all_metrics["overall_accuracy"],
-    }
+    return (
+        f"precision: {all_metrics['overall_precision']}\n"
+        f"recall: {all_metrics['overall_recall']}\n"
+        f"f1: {all_metrics['overall_f1']}\n"
+        f"accuracy: {all_metrics['overall_accuracy']}"
+    )
 
 
 def main():
