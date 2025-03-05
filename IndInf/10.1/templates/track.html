@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Track</title>
+</head>
+<body>
+    <h1>Car Movement Track</h1>
+    <canvas id="trackCanvas" width="600" height="600" style="border:1px solid #000;"></canvas>
+
+    <!-- Include Socket.IO client library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script>
+        const canvas = document.getElementById('trackCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set starting point (should match car_state initial values)
+        let currentPos = { x: 300, y: 300 };
+        ctx.beginPath();
+        ctx.arc(currentPos.x, currentPos.y, 3, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Connect to Socket.IO
+        const socket = io();
+
+        // Listen for 'move' events from the server
+        socket.on('move', function(data) {
+            // Draw a line from the previous position to the new position
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#ff0000";
+            ctx.beginPath();
+            ctx.moveTo(data.prevX, data.prevY);
+            ctx.lineTo(data.x, data.y);
+            ctx.stroke();
+
+            // Update current position
+            currentPos.x = data.x;
+            currentPos.y = data.y;
+        });
+    </script>
+</body>
+</html>
