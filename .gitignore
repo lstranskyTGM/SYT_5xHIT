@@ -1,5 +1,19 @@
+# DaSci Datasets
+/DaSci/9.1/datasets
+
+# Ignore all .safetensors and .pt files
+*.safetensors
+*.pt
+
+# MidEng Repositories
 /MidEng/syt5-gek961-cloud-datenmanagement-lstranskyTGM
 /MidEng/syt5-gek961-cloud-datenmanagement-neuwirth_stransky
-/DaSci/9.1/datasets
-/SysInt
-/DaSci/GK9101_DASCI_Bildklassifikation
+
+# SysInt Repositories
+/SysInt/syt5-gek931-fernwartung-aust_stransky
+/SysInt/syt5-gek941-cluster-and-cloud-computing-aust_stransky
+/SysInt/syt5-gek951-verteilte-dateisysteme-aust_stransky
+
+# Other Files
+*.zip
+*.pdf
