@@ -8,11 +8,14 @@
 # MidEng Repositories
 /MidEng/syt5-gek961-cloud-datenmanagement-lstranskyTGM
 /MidEng/syt5-gek961-cloud-datenmanagement-neuwirth_stransky
+/MidEng/Reddit-Realtime-Streaming-Pipeline
+/MidEng/syt5-gek1041-distributed-data-structures-stranskymachtaustzeit
 
 # SysInt Repositories
 /SysInt/syt5-gek931-fernwartung-aust_stransky
 /SysInt/syt5-gek941-cluster-and-cloud-computing-aust_stransky
 /SysInt/syt5-gek951-verteilte-dateisysteme-aust_stransky
+/SysInt/syt5-gek1031-infrastructure-as-code-neuwirth-stransky
 
 # Other Files
 *.zip
